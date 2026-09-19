@@ -9,6 +9,9 @@ import time
 URL = "https://programmer100.pythonanywhere.com/tours/"
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
+email_password = ""
+email_address = ""
+
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS events (
     event_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -37,6 +40,10 @@ class Email:
         host = "smtp.gmail.com"
         port = 465
 
+        username = email_address
+        password = email_password
+
+        receiver = email_address
 
         context = ssl.create_default_context()
 
